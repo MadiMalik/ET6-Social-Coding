@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+import matplotlib_venn import venn2
+import networkx as nx
+
+import challenge2
 """
 Created on Thu Jan 30 15:30:30 2025
 
@@ -20,3 +24,5 @@ Who is left out? Identify employees without access.
 Are there risks? Indicate employees who might be exposed to unnecessary data.
 Your output should visually highlight these relationships without explicitly listing them in a simple table or list. Think beyond just printing data—use a format that helps detect patterns at a glance.
 """
+
+print(venn2([2, 5], set_labels=('Finance Team', 'Tech Team')))

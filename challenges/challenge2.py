@@ -29,3 +29,39 @@ What changes would you recommend to enhance security and minimize excessive acce
 # -*- coding: utf-8 -*-
 
 """
+
+
+def access_control(employee_id):
+    finance_access = {"E0435", "E1021", "E3098", "E7642", "E8873", "E6590"}
+    tech_access = {"E7642", "E8873", "E6590", "E9812", "E4520"}
+    new_employee = {"E9999"}
+    admin={"E0001"}
+    
+    # This condition is not necessary
+    # Employees with access to at least one type of data
+    # employees_with_access_at_leat_one = finance_access.union(tech_access)
+    
+    # Employees with access to both financial and technical data
+    employees_with_access_both = admin.union(finance_access.intersection(tech_access))
+    
+    # Employees with exclusive access to only one type of data
+    employees_with_access_only_finance_access = finance_access.difference(tech_access)
+    employees_with_access_only_tech_access = tech_access.difference(finance_access)
+    
+    # Employees who lack access
+    no_access = new_employee
+    
+    
+    if employee_id in employees_with_access_both:
+        return "Access to both financial and technical data"
+    elif employee_id in employees_with_access_only_finance_access:
+        return "Exclusive access to financial data"
+    elif employee_id in employees_with_access_only_tech_access:
+        return "Exclusive access to technical data"
+    elif employee_id in no_access:
+        return "You are new set in your place"
+    else:    
+        return "You have no access"
+print(access_control("E7642"))
+print(access_control("E1021"))
+print(access_control("E0001"))

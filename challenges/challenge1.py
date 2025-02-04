@@ -13,6 +13,9 @@ A cybersecurity team is investigating an authentication system that occasionally
 suspicious. The system checks multiple conditions to determine if a login attempt should be blocked.
 One of the core checks involves the following rule:
 ¬(A∧(B∨¬B))
+
+
+`A
 where:
 A: The user has provided the correct login credentials.
 B: The login attempt is from a trusted device.
@@ -26,3 +29,19 @@ Apply Boolean law to simplify it.
 Interpret what the final expression means in the context of allowing or blocking a login attempt.
 
 """
+
+# Original expression
+# def simplify(a, b):
+#     # Because b or not b is always true, the expression can be simplified to not a
+#     if not (a and (b or not b)):
+#         print("Access blocked")
+
+# simplified expression
+def simplify(a, b):
+    # Because b or not b is always true, the expression can be simplified to not a
+    if not a:
+        print("Access blocked")
+    else:
+        print("Access granted")
+
+print(simplify(False, True))
