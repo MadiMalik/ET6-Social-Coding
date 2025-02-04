@@ -37,11 +37,14 @@ Interpret what the final expression means in the context of allowing or blocking
 #         print("Access blocked")
 
 # simplified expression
+
+
 def simplify(a, b):
     # Because b or not b is always true, the expression can be simplified to not a
     if not a:
-        print("Access blocked")
+        return "Access blocked"
     else:
-        print("Access granted")
+        return "Access granted"
+
 
 print(simplify(False, True))
