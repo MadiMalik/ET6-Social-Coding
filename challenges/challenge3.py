@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-import matplotlib_venn import venn2
-import networkx as nx
+import matplotlib.pyplot as plt
+from matplotlib_venn import venn2
 
-import challenge2
+
 """
 Created on Thu Jan 30 15:30:30 2025
 
@@ -25,4 +25,23 @@ Are there risks? Indicate employees who might be exposed to unnecessary data.
 Your output should visually highlight these relationships without explicitly listing them in a simple table or list. Think beyond just printing data—use a format that helps detect patterns at a glance.
 """
 
-print(venn2([2, 5], set_labels=('Finance Team', 'Tech Team')))
+
+finance_access = {"E0435", "E1021", "E3098", "E7642", "E8873", "E6590"}
+tech_access = {"E7642", "E8873", "E6590", "E9812", "E4520"}
+admin = {"E0001"}
+new_employee = {"E9999"}
+
+both_access = finance_access.union(tech_access)
+finance_only = finance_access.difference(tech_access)
+tech_only = tech_access.difference(finance_access)
+no_access = new_employee
+
+
+venn = venn2([finance_access, tech_access], ('Finance Access', 'Tech Access'))
+plt.title("Employee Access Visualization")
+plt.annotate(f"No Access: {', '.join(no_access)}", xy=(-0.5, -0.4),
+             xycoords='axes fraction', fontsize=12, color='red')
+plt.annotate(f"Admin: {', '.join(admin)} (Access to all data)",
+             xy=(-0.5, -0.5), xycoords='axes fraction', fontsize=12, color='blue')
+
+plt.show()

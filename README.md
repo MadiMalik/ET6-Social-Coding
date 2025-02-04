@@ -17,3 +17,17 @@ This repository contains starter code and resources for Social Coding workshops 
 ---
 
 ![MIT Emerging Talent Logo](./.assets/emerging_talent_logo.png)
+
+## Group memebers
+
+**Madiha Malikzada**
+
+**Hasan Zemzem**
+
+**Huda Alamassi**
+
+**Caesar Ghazi**
+
+**Alemayehu Desta**
+
+**Aziz Azizi**
