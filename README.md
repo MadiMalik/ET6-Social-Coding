@@ -18,7 +18,7 @@ This repository contains starter code and resources for Social Coding workshops 
 
 ![MIT Emerging Talent Logo](./.assets/emerging_talent_logo.png)
 
-## Group memebers
+## Group 6 memebers
 
 **Madiha Malikzada**
 
